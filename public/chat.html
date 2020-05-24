@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/app.css">
+    
+    <link id="pageStyle" rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>Chat App</title>
+</head>
+
+<body>
+    <div class="grid-container shadow-lg">
+        <div class="sideBar">
+            <div class="menuLevel1">
+                <img onclick="changeStyle()" class="white-icon" style="margin-top: 25px; width: 60%;" src="./assets/icons/white icons/night.png" alt="Dark Mode"
+                    title="Menu">
+                <img onclick="changeStyle()" class="blue-icon" style="margin-top: 25px; width: 60%;" src="./assets/icons/night.png" alt="Dark Mode"
+                    title="Menu">
+            </div>
+            <div class="menuLevel2">
+                <div onclick=" notWorking()" class="imageContainer">
+                    <img class="white-icon" id="userIcon" style="vertical-align: -webkit-baseline-middle;"
+                        src="./assets/icons/white icons/028-user-1.png" alt="User" title="User">
+                    <img class="blue-icon" style="vertical-align: -webkit-baseline-middle;"
+                        src="./assets/icons/onHover Icons/028-user-1.png" alt="User" title="User">
+                </div>
+                <div onclick=" notWorking()" class="imageContainer">
+                    <img class="white-icon" id="chatIcon" style="vertical-align: -webkit-baseline-middle;"
+                        src=" ./assets/icons/white icons/160-chat.png" alt="Chat" title="Chat">
+                    <img class="blue-icon" style="vertical-align: -webkit-baseline-middle;"
+                        src=" ./assets/icons/onHover Icons/160-chat.png" alt="Chat" title="Chat">
+                </div>
+                <div onclick=" notWorking()" class="imageContainer">
+                    <img class="white-icon" id="informationIcon" style="vertical-align: -webkit-baseline-middle;"
+                        src="./assets/icons/white icons/056-information.png" alt="Informations" title="Informations">
+                    <img class="blue-icon" style="vertical-align: -webkit-baseline-middle;"
+                        src="./assets/icons/onHover Icons/056-information.png" alt="Informations" title="Informations">
+                </div>
+                <div onclick=" notWorking()" class="imageContainer">
+                    <img class="white-icon" id="settingsIcon" style="vertical-align: -webkit-baseline-middle;"
+                        src="./assets/icons/white icons/073-settings.png" alt="Settings" title="Settings">
+                    <img class="blue-icon" style="vertical-align: -webkit-baseline-middle;"
+                        src="./assets/icons/onHover Icons/073-settings.png" alt="Settings" title="Settings">
+                </div>
+            </div>
+            <div>
+            </div>
+            <div class="menuLevel3">
+                <div onclick="logOut()" class="imageContainer" style="margin-bottom: 20px;">
+                    <img style="vertical-align: -webkit-baseline-middle;" id="logOutIcon" src="./assets/icons/white icons/059-log-out.png"
+                        alt="Log-out" title="Log-out" class="white-icon">
+                    <img  style="vertical-align: -webkit-baseline-middle;" src="./assets/icons/onHover Icons/059-log-out.png"
+                        alt="" class="blue-icon">
+                </div>
+            </div>
+        </div>
+
+        <div class="onlineUsers shadow-lg">
+            <div class="Title" style="z-index: 1;">
+                <h4 style="margin: 10% auto 5% 7%;"><strong>Online Users</strong></h4>
+            </div>
+            <div class="searchBox shadow-lg" style="z-index: 1;">
+                <form class="searchForm form-inline d-flex justify-content-center md-form form-sm mt-0">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input onkeyup="search()" id="searchInput" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                        aria-label="Search" style="border: none; background-color: transparent; outline: none;">
+                </form>
+            </div>
+            <div class="onlineUsersList" style="z-index: 1;">
+                <ul id="users">
+                    
+                </ul>
+            </div>
+        </div>
+
+        <div style="display: none;"  id="chatCard" class="chatCard">
+            <div class="chatCardHeader">
+                <div class="chatting-user" >
+                    <div class="chatting-userImage-container">
+                        <img class="chatting-userImage" src="./assets/icons/blue Icons/user.png" alt="">
+                    </div>
+                    <div class="chatting-userName-container">
+                        <h6 id="chatting-userName">Random Name</h6>
+                    </div>
+                </div>
+                <div class="chatCardHeader-icons" >
+                    <div>
+                        <img src="./assets/icons/blue Icons/136-phone-call.png" alt="" style="margin-left: 50%; width: 50%;">
+                    </div>
+                    <div>
+                        <img src="./assets/icons/blue Icons/117-video-camera.png" alt="" style="margin-left: 35%; width: 50%;">
+                    </div>
+                    <div>
+                        <img src="./assets/icons/blue Icons/show-more-button-with-three-dots_icon-icons.com_72547.png" alt=""
+                            style="width: 50%; margin-left: 15%;">
+                    </div>
+                </div>
+            </div>
+
+            <div id="chatCardBody" class="chatCardBody">
+               
+            </div>
+            
+            <div class="messageInput">
+                <div class="messageInputBox shadow-lg" style="z-index: 1;">
+                    <div>
+                        <img onclick="showEmojiBox()" src="./assets/icons/blue Icons/002-smile-1.png" alt=""
+                            style="width: 30%; margin-left: 5px; padding: 5px;">
+                        <img src="./assets/icons/blue Icons/063-picture.png" alt=""
+                            style="width: 30%; margin-left: 5px; padding: 5px;">
+                    </div>
+                    <input id="messageInput" class="messages" type="text" placeholder="Type message"
+                        style="border: none; background-color: transparent;" autofocus>
+                    <div>
+                        <img id="sendIcon" src="./assets/icons/blue Icons/paper-plane.png" alt=""
+                            style="margin-left: 5px;padding: 5px;width: 70%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="welcomeCard">
+            <div>
+                <h3 >Hello <br> Welcome To the Chat App </h3>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="emojiBox" style="display: none;">
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128512;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128513;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128514;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128515;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128516;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128517;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128518;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128519;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128520;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128521;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128522;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128523;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128524;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128525;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128526;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128527;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128528;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128529;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128530;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128531;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128532;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128533;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128534;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128535;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128536;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128537;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128538;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128539;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128540;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128541;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128542;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128543;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128544;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128545;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128546;</div>
+        <div onclick="addEmoji(this.innerHTML)" class="emoji">&#128547;</div>
+      </div>
+      <audio id="notif">
+          <source src="./assets/when.mp3">
+      </audio>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="./scripts/utils/jquery-3.4.1.min.js"></script>
+    <script src="./scripts/utils/deparam.js"></script> 
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./scripts/chat.js" ></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Join | ChatApp</title>
+</head>
+
+
+<body class="centered-form">
+    <div class="centered-form__form">
+        <form action="/chat.html" name="myForm" onsubmit="return validateForm()">
+            <div class="form-field">
+                <h3>Join a Chat</h3>
+            </div>
+            <div class="form-field">
+                <label for="">user Name</label>
+                <input type="text" name="userName" autofocus>
+            </div>
+            <div class="form-field">
+                <label for="">Name</label>
+                <input type="text" name="name">
+            </div>
+            <div class="form-field">
+                <button type="submit">Log In</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>

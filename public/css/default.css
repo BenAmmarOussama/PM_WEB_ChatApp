@@ -1,0 +1,71 @@
+*{
+    color: black;
+}
+.sideBar {
+    background-image: linear-gradient(180deg, #0531f5, #00adef);
+}
+
+.onlineUsers {
+    background-color: #fffdfd;
+} 
+.messageInputBox {
+    background-color: #f7f6f6;
+} 
+
+.message-right {
+    background-color: #b4d6ed;
+}
+
+.chatCardHeader {
+    background-color: #fffdfd;
+}
+
+.chatCardBody, .messageInput {
+    background-color: #f5f2ff;
+}
+
+.message-left {
+    background-color: #fffcfc;
+}
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #b4d6ed; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b4d6ed; 
+  }
+
+  #welcomeCard > div {
+    background-color: #f5f2ff;
+  }
+
+  .onlineUsersListItem:hover {
+    background-color: #e6e6e8;
+    cursor: pointer;
+}
+div.imageContainer:hover {
+  background-color: whitesmoke;
+}
+
+div.imageContainer:hover .blue-icon  {
+  display: inline;
+}
+
+div.imageContainer:hover .white-icon  {
+  display: none;
+}
+
+img.white-icon {
+  display: inline;
+}
+img.blue-icon {
+  display: none;
+}

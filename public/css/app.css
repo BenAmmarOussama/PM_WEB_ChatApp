@@ -1,0 +1,260 @@
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /*background: linear-gradient(to right, #bdc3c7, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(
+    325deg,
+    rgba(39, 107, 130, 1) 0,
+    rgba(49, 84, 129, 1) 100%
+  );
+}
+
+/* Scrollwidth */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+.grid-container {
+    display: grid;
+    margin: auto;
+    margin-top: 3%;
+    width: 90%;
+    height: 90%;
+    min-width: 800px;
+    min-height: 600px;
+    grid-template-columns: 5% 22% auto;
+    grid-gap: 0px;
+    border-radius: 20px;
+}
+
+.sideBar {
+    /*border: 1px solid black;*/
+    text-align: center;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .chatBody {
+    text-align: center;
+    font-size: 30px;
+    /*border-radius: 0 40px 40px 0;*/
+
+    display: grid;
+    grid-template-rows: 10% 90%;
+  }
+
+img {
+    cursor: pointer;
+    width: 40%;
+    margin-top: 5px;
+    /*margin-bottom: 30%;*/
+}
+
+.imageContainer {
+    margin: auto;
+    height: 45px;
+}
+
+
+
+
+
+.menuLevel1 {    
+    position: relative;
+    /*top: 3%;*/
+}
+.menuLevel2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.chatCard {
+    display: grid;
+    grid-template-rows: 10% auto 10%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.chatCardHeader {
+    border-radius: 0 20px 0 0;
+    /* background-color: #fffdfd; */
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.chatCardBody {
+    background-color: #f5f2ff;
+    overflow: auto;
+    padding-top: 10px;
+}
+
+.onlineUsers {
+    display: grid;
+    grid-template-rows: 12% 10% auto;
+    /* background-color: #fffdfd; */
+    z-index: 10;
+    overflow: hidden;
+}
+
+.messageInput {
+    border-radius: 0 0 20px 0;
+    /*background-color: #f5f2ff; */
+    display: grid;
+}
+
+.searchForm {
+    width: 95%;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.searchBox {
+    display: table;
+    width: 90%;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.onlineUsersList {
+    overflow: auto;
+    margin-top: 12px;
+}
+
+ul {
+    margin: 0;  
+    padding: 0;
+}
+
+li {
+    background-color: transparent;
+}
+.onlineUsersListItem{
+    display: grid;
+    grid-template-columns: 20% 80%; 
+    padding: 3%;
+}
+
+.onlineUserImage-container {
+    margin-left: 10px;
+}
+
+.onlineUserName-container {
+    margin: auto;
+}
+
+/*.onlineUsersListItem:hover {
+    background-color: #e6e6e8;
+    cursor: pointer;
+}*/
+
+.onlineUserImage {
+    width: 100%;
+}
+
+.onlineUserName {
+    line-height: 2;
+}
+
+.messageInputBox {
+    display: grid;
+    grid-template-columns: 14% 80% 6% ;
+    width: 90%;
+    margin: auto auto 20px auto;
+    border-radius: 5px;   
+    /* background-color: #f7f6f6; */
+    z-index: 1;
+}
+
+input {
+    outline: none;
+}
+
+.chatting-user {
+    display: grid; 
+    grid-template-columns: 10% auto; 
+    margin: auto auto auto 10%;
+}
+
+.chatCardHeader-icons {
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    margin: auto 0 auto 50% ;
+}
+
+.chatting-userImage {
+    width: 100%;
+}
+.chatting-userName-container  {
+    margin: auto auto auto 20px;
+}
+.message-right-container {
+    width: 90%; height: auto; margin: 5%;
+    margin-top: 0;
+}
+
+.message-right {
+    width: 60%; 
+    height: 80%; 
+    /* background-color: #b4d6ed; */ 
+    border-radius: 10px 10px 0 10px; 
+    padding: 5px; 
+    margin-bottom: 10px; 
+    float: right;
+}
+
+.message-left-container {
+    width: 90%; height: auto; margin: 5%; display: grid; grid-template-columns: 5% auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.message-left {
+    width: 60%; 
+    height: 80%; 
+    /*background-color: #fffcfc; */ 
+    border-radius: 10px 10px 10px 0; 
+    padding: 5px; 
+    margin-bottom: 10px; 
+    float: left; 
+    margin-left: 10px;
+}
+
+#emojiBox {
+    z-index: 1;
+    position : absolute;
+    top : 65% ;
+    left : 30% ;
+    border : solid 1px #0076f6;
+    width : 300px;
+    display : flex;
+    flex-flow : wrap ;
+    place-content: baseline;
+  }
+  .emoji {
+    height : 10%;
+    cursor : pointer;
+    margin: 5px;
+  }
+
+  #welcomeCard > div {
+    width: 100%;
+    height: 100%; 
+    margin: auto;  
+    border-radius: 0 20px 20px 0;
+  }
+
+  #welcomeCard > div > h3 {
+    text-align: center; 
+    position: sticky; 
+    top: 40%; 
+    left: 50%;
+  }
