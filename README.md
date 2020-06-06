@@ -10,7 +10,7 @@
 ## Installation
 ```bash
   * git clone https://github.com/BenAmmarOussama/PM_WEB_ChatApp.git
-  * cd nodeChatApp-ChatRooms
+  * cd PM_WEB_ChatApp
   * npm install
 ```
 
