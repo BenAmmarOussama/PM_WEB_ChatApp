@@ -155,13 +155,19 @@ socket.on('connect', function () {
 socket.on('updateUsersList', function (usersObj) {
     var usersListHTML = '';
     var params = jQuery.deparam(window.location.search);
-    var users = {...usersObj};
+    var users = {...usersObj.obj};
     currentUserName = params.userName;
     delete users[currentUserName];
     
+    console.log(usersObj.list);
+    
     Object.keys(users).forEach(function(key) {
-        usersListHTML += '<li onclick="getUserInfo(this.id)" id="' + key + '" class="onlineUsersListItem"><div class="onlineUserImage-container"><img class="onlineUserImage" src="./assets/icons/blue Icons/user (1).png" alt=""></div><div class="onlineUserName-container"><h6  class="onlineUserName">';
-        usersListHTML += users[key].name + '</h6></div></li>';
+        console.log(key,usersObj.list.includes(key) );
+        
+        if ( usersObj.list.includes(key) ) {
+            usersListHTML += '<li onclick="getUserInfo(this.id)" id="' + key + '" class="onlineUsersListItem"><div class="onlineUserImage-container"><img class="onlineUserImage" src="./assets/icons/blue Icons/user (1).png" alt=""></div><div class="onlineUserName-container"><h6  class="onlineUserName">';
+            usersListHTML += users[key].name + '</h6></div></li>';
+        }
             
     });
     document.getElementById('users').innerHTML = usersListHTML;

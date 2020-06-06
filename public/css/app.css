@@ -41,6 +41,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
   }
+  
   .chatBody {
     text-align: center;
     font-size: 30px;

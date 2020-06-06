@@ -31,6 +31,7 @@ function createMessageLeftHTML (messageContent) {
 
 
 io.on('connect', (socket) => {
+    
     socket.on('getusernames', () => {
         socket.emit('usernames', usernamesList);
     });
@@ -44,7 +45,9 @@ io.on('connect', (socket) => {
             
             console.log(users.usersObj);
             
-            io.emit('updateUsersList', users.usersObj);
+            io.emit('updateUsersList', {obj : users.usersObj, list : usernamesList });
+            
+            //io.emit('updateUsersList', users.usersObj);
     });
 
     socket.on('getUserInfo', (data) => {
@@ -68,9 +71,10 @@ io.on('connect', (socket) => {
          var user = users.getUser(userName);
         if(user){
             usernamesList = usernamesList.filter( (name) => name !== userName );
-            console.log(usernamesList);
-            
-            io.emit('updateUsersList', users.usersObj);
+            console.log('server.js 71',usernamesList);
+            console.log('server.js 71',users.usersObj);
+
+            io.emit('updateUsersList', {obj : users.usersObj, list : usernamesList });
         }
     });
 
